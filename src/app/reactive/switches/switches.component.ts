@@ -4,40 +4,37 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-switches',
   templateUrl: './switches.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class SwitchesComponent implements OnInit {
-
   miFormulario: FormGroup = this.fb.group({
-    genero: [ 'M', Validators.required ],
-    notificaciones: [ true, Validators.required ],
-    condiciones: [ false, Validators.requiredTrue ]
-  })
+    genero: ['M', Validators.required],
+    notificaciones: [true, Validators.required],
+    condiciones: [false, Validators.requiredTrue],
+  });
 
   persona = {
     genero: 'F',
-    notificaciones: true
-  }
+    notificaciones: true,
+  };
 
-  constructor( private fb: FormBuilder ) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.miFormulario.reset({
       ...this.persona,
-      condiciones: true
+      condiciones: true,
     });
 
-    this.miFormulario.valueChanges.subscribe( ({ condiciones, ...rest }) => {
-      // delete form.condiciones;
+    this.miFormulario.valueChanges.subscribe(({ condiciones, ...rest }) => {
       this.persona = rest;
-    })
+    });
   }
 
   guardar() {
-    const formValue = {...this.miFormulario.value};
+    const formValue = { ...this.miFormulario.value };
     delete formValue.condiciones;
 
-    this.persona = { ...formValue }
+    this.persona = { ...formValue };
   }
 }
