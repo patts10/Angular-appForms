@@ -14,8 +14,7 @@
             formControlName="nombre"
             placeholder="Nombre del usuario"
           />
-          <span class="form-text text-danger" 
-                *ngIf="campoValido('nombre')">
+          <span class="form-text text-danger" *ngIf="campoValido('nombre')">
             Debe de ser en formato de nombre y apellido
           </span>
         </div>
@@ -31,11 +30,9 @@
             formControlName="email"
             placeholder="Email del usuario"
           />
-          <span class="form-text text-danger" 
-                *ngIf="campoValido('email')">
+          <span class="form-text text-danger" *ngIf="campoValido('email')">
             {{ emailErrorMsg }}
           </span>
-          
         </div>
       </div>
 
@@ -49,8 +46,7 @@
             formControlName="username"
             placeholder="Nombre código del usuario"
           />
-          <span class="form-text text-danger" 
-                *ngIf="campoValido('username')">
+          <span class="form-text text-danger" *ngIf="campoValido('username')">
             El username no puede ser patts
           </span>
         </div>
@@ -66,8 +62,7 @@
             formControlName="password"
             placeholder="Password de su cuenta"
           />
-          <span class="form-text text-danger" 
-                *ngIf="campoValido('password')">
+          <span class="form-text text-danger" *ngIf="campoValido('password')">
             La contraseña debe ser mayor de 6 caracteres
           </span>
         </div>
@@ -83,8 +78,7 @@
             formControlName="password2"
             placeholder="Confirmar contraseña"
           />
-          <span class="form-text text-danger" 
-                *ngIf="campoValido('password2')">
+          <span class="form-text text-danger" *ngIf="campoValido('password2')">
             Las contraseñas deben ser iguales
           </span>
         </div>
@@ -92,19 +86,18 @@
 
       <div class="row">
         <div class="col">
-          <button class="btn btn-primary float-end"
-                  [disabled]="miFormulario.pending"
-                  type="submit">
+          <button
+            class="btn btn-primary float-end"
+            [disabled]="miFormulario.pending"
+            type="submit"
+          >
             Crear
           </button>
-          
         </div>
       </div>
-
     </form>
   </div>
 </div>
-
 
 <h2>Form valid: {{ miFormulario.valid }}</h2>
 <h2>Form status: {{ miFormulario.status }}</h2>
